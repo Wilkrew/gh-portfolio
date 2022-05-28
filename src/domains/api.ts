@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { Account } from "../models/Github/account";
 import {
   BASE_API_URL,
   ACCOUNT_ENDPOINT,
@@ -9,7 +10,7 @@ export const githubApi = createApi({
   reducerPath: "githubApi",
   baseQuery: fetchBaseQuery({ baseUrl: BASE_API_URL }),
   endpoints: (builder) => ({
-    getAccount: builder.query({
+    getAccount: builder.query<Account, string>({
       query: (query) =>
         query.split(BASE_API_URL + ACCOUNT_ENDPOINT)[1] || "users/wilkrew",
     }),
