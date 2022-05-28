@@ -2,7 +2,7 @@ import githubApi from "./domains/api";
 
 function App() {
   const { data, error, isLoading, isSuccess, isError } =
-    githubApi.useGetAccountQuery("irhtml");
+    githubApi.useGetAccountQuery("");
 
   return (
     <>
